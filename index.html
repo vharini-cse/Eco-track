@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="EcoTrack - A personal eco lifestyle tracker to build sustainable habits and monitor your environmental impact.">
+
+    <title>EcoTrack | Sustainable Living</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            <div class="logo-icon">🌱</div>
+            Eco<span>Track</span>
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#habits">Eco Habits</a>
+                </li>
+
+                <li>
+                    <a href="#progress">Progress</a>
+                </li>
+
+                <li>
+                    <a href="#tips">Eco Tips</a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <a href="#habits" class="nav-button">
+            Start Tracking
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    🌍 Sustainable Living Made Simple
+                </span>
+
+                <h1>
+                    Small choices.
+                    <span>Big impact.</span>
+                </h1>
+
+                <p>
+                    EcoTrack helps you build simple sustainable
+                    habits and understand how your everyday
+                    choices can contribute to a healthier planet.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#habits" class="btn-primary">
+                        Track My Habits
+                    </a>
+
+                    <a href="#progress" class="btn-secondary">
+                        View Progress
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Hero visual -->
+
+            <div class="hero-visual">
+
+                <div class="earth-card">
+
+                    <div class="earth">
+                        🌍
+                    </div>
+
+                    <h3>
+                        Your Eco Journey
+                    </h3>
+
+                    <p>
+                        Every sustainable choice counts.
+                    </p>
+
+                    <div class="mini-progress">
+
+                        <div
+                            class="mini-progress-fill"
+                            id="hero-progress">
+                        </div>
+
+                    </div>
+
+                    <span id="hero-progress-text">
+                        0% completed
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DASHBOARD STATISTICS
+        ========================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <span>
+                    Your Dashboard
+                </span>
+
+                <h2>
+                    Track your environmental habits.
+                </h2>
+
+                <p>
+                    See how your daily actions add up over time.
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <!-- Eco Score -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        🌿
+                    </div>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Eco Score
+                        </span>
+
+                        <h3 id="eco-score">
+                            0
+                        </h3>
+
+                        <p>
+                            out of 100
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Habits -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        ♻️
+                    </div>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Habits Completed
+                        </span>
+
+                        <h3 id="completed-count">
+                            0
+                        </h3>
+
+                        <p>
+                            today
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Water -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon cyan">
+                        💧
+                    </div>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Water Saved
+                        </span>
+
+                        <h3 id="water-saved">
+                            0
+                        </h3>
+
+                        <p>
+                            litres
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Energy -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        ⚡
+                    </div>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Energy Saved
+                        </span>
+
+                        <h3 id="energy-saved">
+                            0
+                        </h3>
+
+                        <p>
+                            kWh
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ECO HABITS
+        ========================== -->
+
+        <section
+            class="section habits-section"
+            id="habits">
+
+            <div class="section-heading">
+
+                <span>
+                    Daily Eco Habits
+                </span>
+
+                <h2>
+                    What did you do for the planet today?
+                </h2>
+
+                <p>
+                    Complete your sustainable habits and
+                    watch your eco score grow.
+                </p>
+
+            </div>
+
+
+            <div class="habits-container">
+
+                <!-- Habit 1 -->
+
+                <div
+                    class="habit-card"
+                    data-points="20"
+                    data-water="2"
+                    data-energy="0">
+
+                    <div class="habit-icon">
+                        💧
+                    </div>
+
+                    <div class="habit-content">
+
+                        <h3>
+                            Used a reusable water bottle
+                        </h3>
+
+                        <p>
+                            Avoided using a single-use plastic bottle.
+                        </p>
+
+                    </div>
+
+                    <label class="habit-check">
+
+                        <input
+                            type="checkbox"
+                            class="habit-checkbox">
+
+                        <span class="checkmark">
+                            ✓
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Habit 2 -->
+
+                <div
+                    class="habit-card"
+                    data-points="20"
+                    data-water="0"
+                    data-energy="3">
+
+                    <div class="habit-icon">
+                        💡
+                    </div>
+
+                    <div class="habit-content">
+
+                        <h3>
+                            Switched off unused lights
+                        </h3>
+
+                        <p>
+                            Saved electricity by turning off
+                            unnecessary lights.
+                        </p>
+
+                    </div>
+
+                    <label class="habit-check">
+
+                        <input
+                            type="checkbox"
+                            class="habit-checkbox">
+
+                        <span class="checkmark">
+                            ✓
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Habit 3 -->
+
+                <div
+                    class="habit-card"
+                    data-points="20"
+                    data-water="0"
+                    data-energy="2">
+
+                    <div class="habit-icon">
+                        🚲
+                    </div>
+
+                    <div class="habit-content">
+
+                        <h3>
+                            Used sustainable transport
+                        </h3>
+
+                        <p>
+                            Walked, cycled, or used public transport.
+                        </p>
+
+                    </div>
+
+                    <label class="habit-check">
+
+                        <input
+                            type="checkbox"
+                            class="habit-checkbox">
+
+                        <span class="checkmark">
+                            ✓
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Habit 4 -->
+
+                <div
+                    class="habit-card"
+                    data-points="20"
+                    data-water="5"
+                    data-energy="0">
+
+                    <div class="habit-icon">
+                        ♻️
+                    </div>
+
+                    <div class="habit-content">
+
+                        <h3>
+                            Recycled household waste
+                        </h3>
+
+                        <p>
+                            Properly separated recyclable materials.
+                        </p>
+
+                    </div>
+
+                    <label class="habit-check">
+
+                        <input
+                            type="checkbox"
+                            class="habit-checkbox">
+
+                        <span class="checkmark">
+                            ✓
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Habit 5 -->
+
+                <div
+                    class="habit-card"
+                    data-points="20"
+                    data-water="8"
+                    data-energy="0">
+
+                    <div class="habit-icon">
+                        🛍️
+                    </div>
+
+                    <div class="habit-content">
+
+                        <h3>
+                            Avoided single-use plastic
+                        </h3>
+
+                        <p>
+                            Used reusable bags or containers instead.
+                        </p>
+
+                    </div>
+
+                    <label class="habit-check">
+
+                        <input
+                            type="checkbox"
+                            class="habit-checkbox">
+
+                        <span class="checkmark">
+                            ✓
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- Habit completion -->
+
+            <div class="completion-message" id="completion-message">
+
+                🌱 Start completing your eco habits!
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROGRESS
+        ========================== -->
+
+        <section
+            class="section progress-section"
+            id="progress">
+
+            <div class="progress-container">
+
+                <div class="progress-content">
+
+                    <span class="hero-tag">
+                        Your Progress
+                    </span>
+
+                    <h2>
+                        Every step towards a greener lifestyle matters.
+                    </h2>
+
+                    <p>
+                        Your daily actions may seem small,
+                        but consistent sustainable habits can
+                        create meaningful change over time.
+                    </p>
+
+                    <div class="progress-details">
+
+                        <div class="progress-label">
+
+                            <span>
+                                Today's Eco Progress
+                            </span>
+
+                            <strong id="progress-percent">
+                                0%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                id="progress-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="progress-message" id="progress-message">
+                        Complete your first habit to begin.
+                    </div>
+
+                </div>
+
+
+                <div class="progress-circle-wrapper">
+
+                    <div class="progress-circle">
+
+                        <div>
+
+                            <span id="circle-score">
+                                0
+                            </span>
+
+                            <small>
+                                ECO SCORE
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACHIEVEMENTS
+        ========================== -->
+
+        <section class="section achievements-section">
+
+            <div class="section-heading">
+
+                <span>
+                    Achievements
+                </span>
+
+                <h2>
+                    Celebrate your green milestones.
+                </h2>
+
+                <p>
+                    Keep building positive habits and unlock
+                    new achievements.
+                </p>
+
+            </div>
+
+
+            <div class="achievement-grid">
+
+                <div
+                    class="achievement-card"
+                    id="achievement-1">
+
+                    <div class="achievement-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        First Step
+                    </h3>
+
+                    <p>
+                        Complete your first eco habit.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="achievement-card locked"
+                    id="achievement-2">
+
+                    <div class="achievement-icon">
+                        🌿
+                    </div>
+
+                    <h3>
+                        Green Starter
+                    </h3>
+
+                    <p>
+                        Complete 3 eco habits.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="achievement-card locked"
+                    id="achievement-3">
+
+                    <div class="achievement-icon">
+                        🌳
+                    </div>
+
+                    <h3>
+                        Eco Champion
+                    </h3>
+
+                    <p>
+                        Complete all 5 habits.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ECO TIP
+        ========================== -->
+
+        <section
+            class="section"
+            id="tips">
+
+            <div class="eco-tip">
+
+                <div class="tip-icon">
+                    💡
+                </div>
+
+                <div class="tip-content">
+
+                    <span>
+                        TODAY'S ECO TIP
+                    </span>
+
+                    <h2 id="eco-tip-text">
+                        Carry a reusable bottle with you
+                        to reduce single-use plastic waste.
+                    </h2>
+
+                    <button
+                        id="new-tip"
+                        class="tip-button">
+
+                        Show Another Tip
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <a href="#home" class="footer-logo">
+                    🌱 EcoTrack
+                </a>
+
+                <p>
+                    Building better habits for a healthier planet.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#habits">
+                    Eco Habits
+                </a>
+
+                <a href="#progress">
+                    Progress
+                </a>
+
+                <a href="#tips">
+                    Eco Tips
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 EcoTrack. Designed for a greener tomorrow. 🌍
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
